@@ -1,29 +1,43 @@
-/*--------------------------------------------
-    [REPLACE MY INFORMATION WITH YOURS]
-    Course: COMP 170, Spring I 2024
-    System: Visual Studio Code, Windows 10
-    Author: C. Fulton
-*/
-
-import java.util.Scanner; //Scanner Class imported
-
-public class SchoolInfo {
+import java.util.Scanner;
+public class GroceryList {
     public static void main(String[] args) throws Exception {
-        // DECLARE VARIABLES (Declare your variables below including your Scanner Object)
+
+        //DECLARE
+        Scanner input = new Scanner(System.in);
+        //Step 1
+        String [] foodItems = {"Nuts","Fish","Lentils","Whole Grains","Beans","Olive Oil",
+		    "Eggs","Yogurt"};
 
 
-        // INTRODUCTION
-        System.out.println("Welcome, listed below is informaiton pertaining to my program of Study at Loyola University!");
-        System.out.println(" ");
+        //Call selectItem method for user input
+        selectItem(foodItems, input);
+        System.out.println( "End of program");
+    }
 
-        // OUTPUT - ASK FOR NUMBER OF CREDIT HOURS FOR THIS TERM/SEMESTER
-        System.out.println("Please enter number of credit hours: ");
+    //Defining the method to ouput the food items list
+    public static void outputList(String [] fItems){
 
-        // INPUT - USE SCANNER OBJECT TO RECEIVE DATA ENTERED BY END-USER FROM TERMINAL
+        //Looping structure to iterate through the array
+        for(var i = 0; i < fItems.length; i++){
+            System.out.println("Enter " + i + " for " + fItems[i]);
+        }
+    }
 
-        // MAKE CALCULATIONS
+    //Define method that accepts user input and allows end-user to enter item
+    public static void selectItem(String [] foodItems, Scanner input){
+        //Define local variables
+        int userInput;
 
-        // OUTPUT DATA TO TERMINAL
+        //Call method to ouput food items
+        outputList(foodItems);
+
+        //Ask user to input item
+        System.out.print("Please enter the number of the item:  ");
+        userInput = Integer.parseInt(input.nextLine());
+
+        //Ouput the item the end-user selected
+        System.out.println("You selected item " + foodItems[userInput]);
+
         
     }
 }
