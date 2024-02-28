@@ -1,30 +1,28 @@
 
 //Car class serves as a blueprint for creating car instances
-abstract class Car{
-    protected String name;
-    protected String model;
-    protected double price;
+public class ElectricCar extends Car {
+
    
-    protected final double DISCOUNT_OFFER = .20;
+    final double DISCOUNT_OFFER = .20;
 
-    abstract protected String CompanyName();
-
-
+   public String CompanyName(){
+        return "Mazda";
+    }
     //Constructor
-    /*public Car(){
+    public ElectricCar(){
         name = "N/A";
         model = "N/A";
         price = 0;
     }
 
-    public Car(String name, String model, double price){
+    public ElectricCar(String name, String model, double price){
         this.name = name;
         this.model = model;
         this.price = price;
         discountPrice();
     }
 
-    public Car(String model, double price){
+    public ElectricCar(String model, double price){
         name = "Mazda";
     }
 
@@ -64,12 +62,12 @@ abstract class Car{
     //Method that calculates discounted price
     public double discountPrice(){
         return price * (1 - DISCOUNT_OFFER);
-    }*/
+    }
 
     @Override
     public String toString(){
 
-        return String.format("Name: " + name + " Model: " + model + " Price: "  + price + " Discount: $" + discountPrice());
+        return String.format("Electric Car Name: " + name + " Model: " + model + " Price: "  + price + " Discount: $" + discountPrice());
 
     }
   
